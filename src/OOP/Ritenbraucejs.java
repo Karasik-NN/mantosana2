@@ -46,6 +46,17 @@ do {
 				Metodes.skaitlaParbaude("Kāds ir diametrs riteņam? ", 12, 26);
 				
 		int sedPoz = Metodes.iestatitSedekli();
+		
+		//veido parasto riteni
+		if (izvelesID == 0) {
+			riteni.add(new Velosipeds((int)diametrs, sedPoz, cena, razotajs));
+			JOptionPane.showMessageDialog(null,"Veiksimi izveidots jauns ritenis!","Pazinojums",
+					JOptionPane.INFORMATION_MESSAGE);
+			
+			//veido kalnu riteni
+					}else if(izvelesID == 1) {
+						int iestatAtr = Metodes.iestatitAtrumu();
+					}
 				break;
 	}
 	

@@ -1,19 +1,20 @@
 package OOP;
 
 import java.util.Random;
-import javax.swing.JOptionPane;
 
 public class Velosipeds {
-// Atribūti
-	private int ritenaD, sedeklaPoz;
+
+	// Atribūti
+	int ritenaD;
+	private int sedeklaPoz;
 	private double atrumsMS, cena;
 	private String razotajs;
 	private Random rand = new Random();
 	
 	
 	//Konstruktors
-	public Velosipeds(int ritenaD,int sedeklaPoz, double cena, String razotajs) {
-		this.ritenaD = ritenaD;
+	public Velosipeds(int diametrs,int sedeklaPoz, double cena, String razotajs) {
+		this.ritenaD = diametrs;
 		this.sedeklaPoz = sedeklaPoz;
 		atrumsMS = kustiba();
 		this.cena = cena;
