@@ -18,7 +18,7 @@ String[]darbibas = {"Jauns ritenis","Noņemt riteni",
 		"Aizvērt programmu"};
 String[]veidi = {"Velosipēds", "Kalnu Velosipēds",
 		"Bernu velosipēds"};
-String[]atbile = {"Jā", "Nē"};
+String[]atbilde = {"Jā", "Nē"};
 ArrayList<Object>riteni = new ArrayList<>();
 do {
 	izvele = (String)JOptionPane.showInputDialog(null,
@@ -56,10 +56,59 @@ do {
 			//veido kalnu riteni
 					}else if(izvelesID == 1) {
 						int iestatAtr = Metodes.iestatitAtrumu();
-					}
+						
+						
+						izvele = (String)JOptionPane.showInputDialog(null,
+								"Vai ritenim ir papildus amortizācija", "Izvēle",
+								JOptionPane.QUESTION_MESSAGE,null,atbilde,atbilde[0]);
+						
+						
+						if(izvele == null)
+							
+							izvelesID = Arrays.asList(atbilde).indexOf(izvele);
+						boolean atsperes = (izvelesID == 0)? true : false;
+						
+						riteni.add(new KauluRitenis(iestatAtr,atsperes,(int)diametrs,sedPoz,
+								cena, razotajs));
+					}else if (izvelesID == 2) {
+                    izvele = (String)JOptionPane.showInputDialog(null,
+                    		"Vai ritenim ir paligriteni", "Izvēle",
+                    		JOptionPane.QUESTION_MESSAGE, null, atbilde, atbilde[0]);
+                    if(izvele == null)
+                    	break;
+                    
+                    izvelesID = Arrays.asList(atbilde).indexOf(izvele);
+                    boolean paligRit = (izvelesID == 0)? true : false; 
+                    
+                    izvele = (String)JOptionPane.showInputDialog(null,
+                    		"Vai  ir zvanins", "Izvēle",
+                    		JOptionPane.QUESTION_MESSAGE, null, atbilde, atbilde[0]);
+                    if(izvele == null)
+                    	break;
+                    
+                    izvelesID = Arrays.asList(atbilde).indexOf(izvele);
+                    boolean zvanins = (izvelesID == 0)? true : false; 
+                    
+                    riteni.add(new BernuRitenis(
+            				paligRit, zvanins,
+                           (int)diametrs , sedPoz, cena, razotajs));
+            		break;
+                    		}
+			
+	case 1:
+		if(riteni.size()> 0) {
+			int ritID = Metodes.ritenaIzvele(riteni);
+			
+		}else {
+			JOptionPane.showMessageDialog(null,
+					"Sarakstā nav neviens ritenis!", "Bridinajums",
+					JOptionPane.WARNING_MESSAGE);
+			
+		}
 				break;
 	}
-	
+
+		
 	
 	
 }while(izvelesID != 5);
