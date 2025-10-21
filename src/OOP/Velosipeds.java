@@ -2,7 +2,7 @@ package OOP;
 
 import java.util.Random;
 
-public class Velosipeds {
+public class Velosipeds implements Comparable<Velosipeds> {
 
 	// Atribūti
 	int ritenaD;
@@ -78,5 +78,10 @@ public class Velosipeds {
 			if(atrumsMS < 0)
 				atrumsMS = 0;
 		}
+	}
+
+	@Override
+	public int compareTo(Velosipeds v) {
+	    return Double.compare(this.noteiktCenu(), v.noteiktCenu());
 	}
 }
